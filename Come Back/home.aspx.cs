@@ -59,6 +59,22 @@ namespace Come_Back
 
             litLog.Text = html;
 
+            string html2 = "";
+            Utils Util = new Utils();
+            List<Utils.ScheduleItem> items2 = util.GetSchedule(Session["username"].ToString());
+            foreach (var item in items2)
+            {
+                lblmonday.Text = item.fld_monday;
+                lbltuesday.Text = item.fld_tuesday;
+                lblwednesday.Text = item.fld_wednesday;
+                lblthursday.Text = item.fld_thursday;
+                lblfriday.Text = item.fld_friday;
+                lblstaruday.Text = item.fld_saturday;
+                lblsunday.Text = item.fld_sunday;
+                litmonth.Text = "<h3 class=\"box-title\">" + item.fld_CurrentMonth.ToString() + "</h3>";
+            }
+            
+
         }
     }
 }
